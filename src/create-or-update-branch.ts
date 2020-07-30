@@ -100,6 +100,7 @@ export async function createOrUpdateBranch(
   if (await git.isDirty(true)) {
     core.info('Uncommitted changes found. Adding a commit.')
     await git.exec(['add', '-A'])
+    console.log(signoff)
     if (signoff == true) {
       await git.commit(['-m', commitMessage, '-s'])
     } else {
