@@ -217,7 +217,7 @@ describe('create-or-update-branch tests', () => {
       '',
       BRANCH,
       REMOTE_NAME,
-      false
+      true
     )
     expect(result.action).toEqual('created')
     expect(await getFileContent(TRACKED_FILE)).toEqual(trackedContent)
